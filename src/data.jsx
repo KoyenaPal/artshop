@@ -9,7 +9,7 @@ const productList = [
  { name: "Side Profile", size: "Medium", shape:"Portrait", price:"2500.00", image:"images/medium_portrait_2.jpg"},
  { name: "Fall Sunset", size: "Large", shape:"Landscape", price:"10000.00", image:"images/large_landscape_1.jpg"},
  { name: "Falling Leaves in Park", size: "Large", shape:"Landscape", price:"20000.00", image:"images/large_landscape_2.jpg"},
- { name: "Abstract African American Lady", size: "Large", shape:"Portrait", price:"50000.00", image:"images/large_portrait_1.jpg"},
+ { name: "Abstract African American Lady", size: "Large", shape:"Portrait", price:"57000.00", image:"images/large_portrait_1.jpg"},
  { name: "Woman in a Green Hat", size: "Large", shape:"Portrait", price:"55000.00", image:"images/large_portrait_2.jpg"}
 ]
 export default productList

@@ -13,11 +13,11 @@ export default class App extends React.Component {
   render() {
     console.log(productList)
   return (
-  <div className="App" class="container">
-    <div class="left">
+  <div className="App container">
+    <div className="left">
     <FilteredList list={this.state.currData} />
   </div>
-  <div class="right">
+  <div className="right">
     Needs to be a shopping cart
   </div>
   </div>
