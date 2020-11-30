@@ -13,14 +13,18 @@
   }
 }
 
-.container {
+.flex-container {
   display: flex;
 }
 
-.left {
-  flex: 0 0 65%;
-}
-
-.right {
+.flex-child-right {
   flex: 1;
-}
+  padding: 20px;
+}  
+
+.flex-child-left {
+  flex: 1;
+  padding: 20px;
+  margin-right: 20px;
+  padding: 20px;
+} 

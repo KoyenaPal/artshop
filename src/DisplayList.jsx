@@ -8,6 +8,7 @@ export default class DisplayList extends React.Component {
       this.state = {
         list: this.props.list,
       };
+      this.addItem = this.props.addItem;
     }
 
     render() {
@@ -27,7 +28,7 @@ export default class DisplayList extends React.Component {
             <ListGroup.Item>Cost: ${item.price}</ListGroup.Item>
           </ListGroup>
           <Card.Body>
-            <Button variant="primary">Add to Cart</Button>
+            <Button variant="primary" value={item} onClick={() => this.addItem(item)}> Add to Cart</Button>
           </Card.Body>
           </Card>
           </Grid>

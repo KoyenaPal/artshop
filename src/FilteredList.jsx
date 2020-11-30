@@ -13,6 +13,7 @@ export default class FilteredList extends React.Component {
         shape:"AllShape",
         range:"Select",
       };
+      this.addItem= this.props.addItem
       this.priceSort = this.priceSort.bind(this)
     }
 
@@ -124,7 +125,7 @@ export default class FilteredList extends React.Component {
             </Navbar>
             </div>
         <div id="product-list-display">
-        <DisplayList list={(this.props.list.filter(this.matchesAllFilter)).sort(this.priceSort)} />
+        <DisplayList list={(this.props.list.filter(this.matchesAllFilter)).sort(this.priceSort)} addItem={this.addItem} />
         </div>
         </div>
         )};

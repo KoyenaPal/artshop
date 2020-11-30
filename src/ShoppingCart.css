@@ -1,0 +1,9 @@
+#checkoutButton {
+    display: flex;
+    float: right;
+}
+#totalCost {
+    display: flex;
+    float: left;
+    font-size: 20px;
+}
