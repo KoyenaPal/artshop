@@ -62,7 +62,7 @@ export default class ShoppingCart extends React.Component {
           ))}
               </Grid>
             </Card.Body>
-            <Card.Footer><p id="totalCost">Total: ${this.totalCost()}</p><Button id="checkoutButton">Checkout</Button></Card.Footer>
+            <Card.Footer><p id="totalCost">Total: ${this.totalCost()}</p></Card.Footer>
             </Card>
         </div>
         )};

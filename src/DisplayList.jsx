@@ -14,7 +14,7 @@ export default class DisplayList extends React.Component {
     render() {
         return (
         <div>
-          <Grid container justify="center" spacing={3}>
+          <Grid container justify="center" spacing={2}>
           {this.props.list.map(item => (
           <Grid key={item.name} item>
           <Card style={{ width: '18rem' }}>

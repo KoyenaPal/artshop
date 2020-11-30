@@ -75,7 +75,7 @@ export default class FilteredList extends React.Component {
 
     render() {
     return (
-        <div>
+        <div id="filter-side">
             <div id="meta-nav-bar">
             <Navbar bg="light" expand="lg">
             <Nav className="mr-auto">
