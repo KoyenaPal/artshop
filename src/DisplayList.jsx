@@ -2,15 +2,22 @@ import React from "react";
 import { Card, ListGroup, Button} from "react-bootstrap";
 import Grid from "@material-ui/core/Grid";
 
+// The DisplayList component is the component that we use display the products.
 export default class DisplayList extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         list: this.props.list,
       };
+      // addItem carried over from the parent component
       this.addItem = this.props.addItem;
     }
 
+    // Renders the html for this component.
+    // There is a Grid, within which, each item is mapped 
+    // to create a Card that has each information of the item displayed.
+    // In each Card, there is also an "Add to Cart" button. 
+    // When it is clicked, the addItem function is called with the item as its parameter.
     render() {
         return (
         <div>

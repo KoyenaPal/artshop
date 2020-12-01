@@ -1,6 +1,13 @@
+// productList contains all the required data for the application.
+// Each data element has the folowing:
+// - name: name of the product
+// - size: size of the product (currently can be either Small, Medium or Large)
+// - shape: shape of the product (currently can be either Landscape or Portrait)
+// - price: price of the product
+// - image: image path of the product's image.
 const productList = [
  { name: "Monets Garden", size: "Small", shape:"Landscape", price:"150.00", image:"images/small_landscape_1.jpg"},
- { name: "Boat in Sunset", size: "Small", shape:"Landscape", price:"29.99", image:"images/small_landscape_2.jpg"},
+ { name: "Boat in Sunset", size: "Small", shape:"Landscape", price:"30.00", image:"images/small_landscape_2.jpg"},
  { name: "Green Hill", size: "Small", shape:"Landscape", price:"27.00", image:"images/small_landscape_3.jpg"},
  { name: "Autumn Touch", size: "Small", shape:"Landscape", price:"243.00", image:"images/small_landscape_4.jpg"},
  { name: "Attitude", size: "Small", shape:"Portrait", price:"250.00", image:"images/small_portrait_1.jpg"},

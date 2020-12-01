@@ -1,11 +1,17 @@
+import './FilteredList.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import DisplayList from './DisplayList.jsx';
 
+// The FilteredList component is the component that we use 
+// to filter the products displayed based on the filters we
+// currently provide and the parameters the user has chosen.
 export default class FilteredList extends React.Component {
     constructor(props) {
       super(props);
+      // the default size, shape, and range asked for is "AllSize", "AllShape"
+      // and no ordering of products based on price, respectively.
       this.state = {
         list: this.props.list,
         originalList: [...this.props.list],
@@ -13,20 +19,32 @@ export default class FilteredList extends React.Component {
         shape:"AllShape",
         range:"Select",
       };
-      this.addItem= this.props.addItem
+      // addItem carried over from the parent component
+      this.addItem = this.props.addItem
+      // a function in this component that needs to be used in the render method.
       this.priceSort = this.priceSort.bind(this)
     }
-
+    
+    // onSelectFilterSize takes in the size requested by the user and
+    // sets the size value of the state to be the value of "event".
     onSelectFilterSize = event => {
         this.setState({
             size: event
         });
     }
+
+    // onSelectFilterShape takes in the shape requested by the user and
+    // sets the shape value of the state to be the value of "event".
     onSelectFilterShape = event => {
         this.setState({
             shape: event
         });
     }
+
+    // matchesFilterSize takes in an item and returns a boolean.
+    // - Returns true if the size of the product matches the size
+    //   currently set by the user or is set as "AllSize".
+    // - Returns false otherwise.
     matchesFilterSize = item => {
         if (this.state.size === "AllSize") {
             return true;
@@ -36,6 +54,11 @@ export default class FilteredList extends React.Component {
             return false;
         };
     };
+
+    // matchesFilterShape takes in an item and returns a boolean.
+    // - Returns true if the shapee of the product matches the shape
+    //   currently set by the user or is set as "AllShape".
+    // - Returns false otherwise.
     matchesFilterShape = item => {
         if (this.state.shape === "AllShape") {
             return true;
@@ -46,6 +69,8 @@ export default class FilteredList extends React.Component {
         };
     };
 
+    // priceSort takes in two items and returns a numerical value
+    // based on the range asked by the user.
     priceSort(a, b) {
         const aCost = Number(a.price);
         const bCost = Number(b.price);
@@ -58,12 +83,17 @@ export default class FilteredList extends React.Component {
         }
     }
 
+    // onSelectFilterRange takes in the range requested by the user and
+    // sets the range value of the state to be the value of "event".
     onSelectFilterRange = event => {
         this.setState({
             range: event
         });
     }
 
+    // matchesAllFilter takes in an item and returns a boolean.
+    // - Returns true if it matches both the shape and size of the current state.
+    // - Returns false otherwise.
     matchesAllFilter = item => {
         console.log("Came to matches")
         if (this.matchesFilterShape(item) && this.matchesFilterSize(item)) {
@@ -73,6 +103,11 @@ export default class FilteredList extends React.Component {
         } 
     }
 
+    // Renders the html for this component.
+    // There are 3 Navbars, each for different filters and sorters.
+    // The final child div (product-list-display) calls in DisplayList to
+    // display the current set of products that matches the filters and are
+    // ordered the way the user askes for.
     render() {
     return (
         <div id="filter-side">

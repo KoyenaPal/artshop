@@ -3,6 +3,7 @@ import React from "react";
 import { Card, ListGroup, Button, ButtonGroup} from "react-bootstrap";
 import Grid from "@material-ui/core/Grid";
 
+// The ShoppingCart component is the component that we use display the products in the cart.
 export default class ShoppingCart extends React.Component {
     constructor(props) {
       super(props);
@@ -15,11 +16,16 @@ export default class ShoppingCart extends React.Component {
       this.handleDecrease = this.props.handleDecrease;
     }
 
+    // totalCost calculates and returns the total cost of the cart 
+    // based on the current quantity and price of each product in the list.
     totalCost() {
       const newTotal = this.props.list.reduce(
         (accumulator, item) => accumulator + (Number(item.quantity) * Number(item.product.price)), 0);
       return Number(newTotal);
     }
+
+    // isInCart takes in an item and returns true if its quantity is more than 0.
+    // It returns false otherwise.
     isInCart = item => {
       if (item.quantity > 0) {
         return true;
@@ -27,6 +33,15 @@ export default class ShoppingCart extends React.Component {
         return false;
       }
     }
+
+    // Renders the html for this component.
+    // There is a meta Card within which, there is a Grid.
+    // Within the Grid, each item which fits the isInCart filter is mapped
+    // to create a Card that has each information of the item displayed.
+    // This includes the current quantity asked for by the user.
+    // In each Card, there is an increase, decrease, and remove active buttons
+    // and these buttons call related functions when clicked by the user.
+    // Lastly, the footer of the Card displays the total cost of the cart.
     render() {
         console.log("CAME TO SHOPPING CART");
         return (
